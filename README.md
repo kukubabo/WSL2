@@ -59,6 +59,15 @@ CentOS는 Microsoft Store에 공식 지원되지 않아서 3rd-party 이미지�
 2. 다운로드 받은 zip 파일의 압축을 풀고, 적절한 경로에 이동시켜둔다.(ex. C:\WSL\CentOS7)
 3. 해당 경로(ex. C:\WSL\CentOS7)로 이동해서 "CentOS.exe" 파일을 "관리자 모드"로 실행시킨다. (실치 수행)  
 실행 완료되면 동일 경로상에 ext4.vhdx 라는 파일(Linux에서 사용하는 파일시스템 파일)이 생성된다.
+#### 삭제 방법
+1. Windows Terminal을 "관리자 모드"로 실행한다.
+2. Terminal 화면에서 CentOS 설치 경로로 이동 후 "CentOS.exe /claen" 명령을 두 번 수행한다.  
+(3rd-party 제품이라 그런지 2번 수행해야 정상적으로 삭제되는 것으로 확인됨)
+```PowerShell
+PS C:\> cd C:\WSL\CentOS7
+PS C:\WSL\CentOS7> CentOS.exe /clean
+PS C:\WSL\CentOS7> CentOS.exe /clean
+```
 
 ## 6단계. WSL을 이용하여 Linux 실행 및 접속
 Windows Terminal 실행 후 다음의 명령을 수행하여 Linux에 접속한다.
