@@ -4,10 +4,15 @@ Windows10 에서 Native로 리눅스를 실행할 수 있도록 제공하는 리
 이를 통해서 별도 Virtual Machine 프로그램(ex. Oracle Virtual Box) 없이 Linux 머신을 Windows 위에서 실행시킬 수 있다.
 
 ## (사전작업) Windows Terminal 설치
-PowerShell이나 WSL 명령 수행을 위해 Windows Terminal 을 설치한다.  
+WSL 명령 수행을 위해 Windows Terminal 을 설치한다.  
 `WSL 구성 후 Linux 설치 및 접속을 위한 필수 프로그램이다.`  
 1. Microsoft Store 에서 "Windows Terminal" 검색한다.  
 2. "받기" 를 눌러서 설치한다.  
+
+## (사전작업) Windows 에서 WSL 활성화
+PowerShell이나 cmd 창에서 `wsl` 명령 수행시 찾을 수 없는 명령어라고 뜰 경우에 수행한다.  
+1. 제어판 - 프로그램 제거 - (좌측메뉴의) "Windows 기능 켜기/끄기" - "Linux용 Windows 하위 시스템" 체크
+2. 재부팅
 
 ## 1단계. Linux용 Windows 하위 시스템 사용
 Windows에서 Linux 배포를 설치하려면 먼저 "Linux용 Windows 하위 시스템" 옵션 기능을 사용하도록 설정한다.  
@@ -31,14 +36,18 @@ WSL2를 설치하려면 먼저 Virtual Machine 플랫폼 옵션 기능을 사용
 dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
 ```
 
-## 4단계. WSL2를 기본 버전으로 설정
+## 4단계. WSL2 커널 업데이트 패키지 설치
+WSL2 적용을 위해 다음링크에서 커널 업데이트 패키지 설치 파일을 다운 받아 설치한다.  
+[x86 머신용 최신 WSL2 Linux 커널 업데이트 패키지](https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi)
+
+## 5단계. WSL2를 기본 버전으로 설정
 WSL 사용시 WSL2 버전을 기본 버전으로 사용하도록 설정한다.  
 `명령 수행은 0단계에서 설치한 Windows Terminal 을 "관리자 모드"로 실행시켜서 수행한다.`
 ```PowerShell
 wsl --set-default-version 2
 ```
 
-## 5단계. Linux 배포판 설치
+## 6단계. Linux 배포판 설치
 ### 1. Microsoft Store 에서 설치
 Microsoft Store에 다양한 리눅스 배포판이 지원된다. (2021-03-03 기준)  
 #### 무료버전
@@ -69,7 +78,7 @@ PS C:\WSL\CentOS7> CentOS.exe /clean
 PS C:\WSL\CentOS7> CentOS.exe /clean
 ```
 
-## 6단계. WSL을 이용하여 Linux 실행 및 접속
+## 7단계. WSL을 이용하여 Linux 실행 및 접속
 Windows Terminal 실행 후 다음의 명령을 수행하여 Linux에 접속한다.
 ```PowerShell
 ## WSL 배포 목록 확인 ( * 표시된 이미지가 Default 이미지 )
