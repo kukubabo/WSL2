@@ -66,7 +66,7 @@ CentOS는 Microsoft Store에 공식 지원되지 않아서 3rd-party 이미지�
 #### 설치 방법
 1. https://github.com/mishamosher/CentOS-WSL 에서 원하는 버전(CentOS6, 7, 8)의 링크를 타고 들어가서 설치 파일(zip 파일)을 다운로드 한다.
 2. 다운로드 받은 zip 파일의 압축을 풀고, 적절한 경로에 이동시켜둔다.(ex. C:\WSL\CentOS7)
-3. 해당 경로(ex. C:\WSL\CentOS7)로 이동해서 "CentOS.exe" 파일을 "관리자 모드"로 실행시킨다. (실치 수행)  
+3. 해당 경로(ex. C:\WSL\CentOS7)로 이동해서 "CentOS.exe" 파일을 `"관리자 모드"`로 실행시킨다. (실치 수행)  
 실행 완료되면 동일 경로상에 ext4.vhdx 라는 파일(Linux에서 사용하는 파일시스템 파일)이 생성된다.
 #### 삭제 방법
 1. Windows Terminal을 "관리자 모드"로 실행한다.
